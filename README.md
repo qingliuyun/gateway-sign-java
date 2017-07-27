@@ -9,14 +9,17 @@
 
 1. 引入依赖包
 
+```xml
     <dependency>
         <groupId>cn.dceast.platform</groupId>
         <artifactId>gateway-sign</artifactId>
         <version>2.1.0</version>
     </dependency>
-    
+```
+  
 2. 调用api
-    
+
+```java    
     //api地址
     String url = "http://localhost:8080/route/get";
     //青柳云申请的appkey与secretkey
@@ -31,5 +34,6 @@
     params.put("bus", "301");
     String response = SimpleApiCallUtil.postForm(url, appKey, secretKey, params, null, timeout, null);
     System.out.println(response);
+```
 
 ## 常见问题
