@@ -58,6 +58,17 @@
         </dependency>
 
     </dependencies>
+	
+	<distributionManagement>
+	  <snapshotRepository>
+	    <id>sonatype-nexus-snapshots</id>
+	    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+	  </snapshotRepository>
+	  <repository>
+	    <id>sonatype-nexus-staging</id>
+	    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+	  </repository>
+	</distributionManagement>
 
     <build>
         <resources>
@@ -86,6 +97,14 @@
                 <configuration>
                     <encoding>UTF-8</encoding>
                 </configuration>
+                <executions>
+			        <execution>
+			          <id>attach-javadocs</id>
+			          <goals>
+			            <goal>jar</goal>
+			          </goals>
+			        </execution>
+			      </executions>
             </plugin>
 
             <plugin>
@@ -108,7 +127,7 @@
             <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.1</version>
+				<version>1.5</version>
 				<executions>
 				  <execution>
 					<id>sign-artifacts</id>
